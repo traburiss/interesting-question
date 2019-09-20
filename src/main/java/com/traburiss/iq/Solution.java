@@ -26,7 +26,7 @@ public enum  Solution {
      * @param nums integer array , need in [0,9]
      */
     public List<String> solution(int[] nums){
-        List<String> resList = new ArrayList<String>();
+        List<String> resList = new ArrayList<>();
         if (nums.length > 0){
             solution(nums, digits,0, resList, "");
         }
@@ -38,7 +38,7 @@ public enum  Solution {
      * @param nums integer array , need in [0,99]
      */
     public List<String> solutionStage2(int[] nums){
-        List<String> resList = new ArrayList<String>();
+        List<String> resList = new ArrayList<>();
         if (nums.length > 0){
             solution(nums, digitsStage2,0,resList, "");
         }
@@ -46,8 +46,9 @@ public enum  Solution {
     }
 
     /**
-     * real solution
-     * @param nums integer array , need in [0,9]
+     * real solution, recursion
+     * @param nums integer array , need in [0, digits.length - 1]
+     * @param digits digits into letter
      * @param index the nums index
      * @param resList the result list
      * @param res the result
@@ -63,8 +64,7 @@ public enum  Solution {
                     solution(nums, digits, ++index, resList, res);
                 }else {
                     for (int i = 0; i < letterList.length(); i++) {
-                        char letter = letterList.charAt(i);
-                        solution(nums, digits, index + 1, resList, res + letter);
+                        solution(nums, digits, index + 1, resList, res + letterList.charAt(i));
                     }
                 }
             }
