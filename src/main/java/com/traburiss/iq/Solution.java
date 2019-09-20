@@ -57,10 +57,9 @@ public enum  Solution {
             int num = nums[index];
             if (num < 0 || num >= digits.length) {
                 throw new IndexOutOfBoundsException("nums should in [0,"  + (digits.length - 1) + "]");
-            }
-            else {
+            } else {
                 String letterList = digits[num];
-                if (letterList.length() == 0){
+                if (letterList.isEmpty()){
                     solution(nums, digits, ++index, resList, res);
                 }else {
                     for (int i = 0; i < letterList.length(); i++) {
