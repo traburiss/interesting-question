@@ -20,36 +20,52 @@ public class SolutionTest {
     @Test
     public void solutionTest(){
 
-        List<String> result;
-        result = Solution.instance.solution(new int[]{2,3});
-        log.info("result1 is {}", result);
-        result = Solution.instance.solution(new int[]{1,0});
-        log.info("result1 is {}", result);
-        result = Solution.instance.solution(new int[]{0,2,3});
-        log.info("result2 is {}", result);
-        result = Solution.instance.solution(new int[]{0,1,2,3,2,1,0});
-        log.info("result3 is {}", result);
+        List<String> output;
+        int[] input = new int[]{2,3};
+        output = Solution.instance.solution(input);
+        log.info("input1 is {} output1 is {}", input, output);
+
+        input = new int[]{1,0};
+        output = Solution.instance.solution(input);
+        log.info("input1 is {} output1 is {}", input, output);
+
+        input = new int[]{0,2,3};
+        output = Solution.instance.solution(input);
+        log.info("input1 is {} output1 is {}", input, output);
+
+        input = new int[]{0,1,2,3,2,1,0};
+        output = Solution.instance.solution(input);
+        log.info("input1 is {} output1 is {}", input, output);
 
         expect.expect(IndexOutOfBoundsException.class);
         expect.expectMessage("nums should in [0,9]");
-        Solution.instance.solution(new int[]{0,1,2,11,2,1,0});
+        input = new int[]{0,1,2,11,2,1,0};
+        Solution.instance.solution(input);
     }
 
     @Test
     public void solutionStage2Test(){
 
-        List<String> result;
-        result = Solution.instance.solutionStage2(new int[]{33,2,98});
-        log.info("result1 is {}", result);
-        result = Solution.instance.solutionStage2(new int[]{1,11,21});
-        log.info("result1 is {}", result);
-        result = Solution.instance.solutionStage2(new int[]{0,2,3,99});
-        log.info("result2 is {}", result);
-        result = Solution.instance.solutionStage2(new int[]{0,1,2,3,11,2,1,0});
-        log.info("result3 is {}", result);
+        List<String> output;
+        int[] input = new int[]{2,33};
+        output = Solution.instance.solutionStage2(input);
+        log.info("input2 is {} output2 is {}", input, output);
+
+        input = new int[]{1,11,21};
+        output = Solution.instance.solutionStage2(input);
+        log.info("input2 is {} output2 is {}", input, output);
+
+        input = new int[]{0,2,3,99};
+        output = Solution.instance.solutionStage2(input);
+        log.info("input2 is {} output2 is {}", input, output);
+
+        input = new int[]{0,1,2,3,11,2,1,0};
+        output = Solution.instance.solutionStage2(input);
+        log.info("input2 is {} output2 is {}", input, output);
 
         expect.expect(IndexOutOfBoundsException.class);
         expect.expectMessage("nums should in [0,99]");
-        Solution.instance.solutionStage2(new int[]{0,1,2,100,2,1,0});
+        input = new int[]{0,1,2,100,2,1,0};
+        Solution.instance.solutionStage2(input);
     }
 }
